@@ -3,11 +3,14 @@ let btnVerificar = document.getElementById('verificar');
 btnVerificar.addEventListener('click',verMensaje)
 
 function esPrimo(numero) {
-    if(numero<2||(numero%2==0&&numero!=2))
-        return false;
-     for(let x=3; x*x<=numero; x+=2)
-        if( numero%x==0 )
-           return false;
+    if(numero <=1) return false;
+    if(numero <=3) return true;
+    if(numero % 2 === 0 || numero % 3 === 0)  return false;
+
+    for (let i = 2; i*i <= numero; i++){
+        if (numero % i === 0) return false;
+    }
+
      return true;
  }
 
